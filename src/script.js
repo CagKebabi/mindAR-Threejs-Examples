@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const model = gltf.scene;
                             
                             // Modelin ölçeğini ayarla 
-                            model.scale.set(1, 1, 1);
+                            model.scale.set(0.1, 0.1, 0.1);
                             
                             // Modelin pozisyonunu ayarla 
                             model.position.set(0.3, -0.1, 0);
@@ -494,7 +494,6 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             // Model 3
-            // Model 1
             const loadModel3 = () => {
                 return new Promise((resolve, reject) => {
                     loader.load(
@@ -539,10 +538,10 @@ document.addEventListener('DOMContentLoaded', () => {
             anchor.group.add(model);
 
             const anchor2 = mindarThree.addAnchor(1);
-            anchor.group.add(model2);
+            anchor2.group.add(model2);
             
             const anchor3 = mindarThree.addAnchor(2);
-            anchor.group.add(model3);
+            anchor3.group.add(model3);
 
             // Smooth interpolation için değişkenler görüntülenen modelin titremesini azaltmak için
             let lastPosition = new THREE.Vector3();
