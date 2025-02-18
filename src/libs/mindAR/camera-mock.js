@@ -17,7 +17,7 @@ export const mockWithVideo = (path) => {
         document.body.removeChild(startButton);
         resolve(stream);
       });
-          };
+      };
           video.setAttribute('loop', '');
           video.setAttribute("src", path);
     });
