@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         (xhr) => {
                             // Yükleme ilerlemesi
                             console.log((xhr.loaded / xhr.total * 100) + '% yüklendi');
+                            document.getElementById('progress1').innerText = Math.round((xhr.loaded / xhr.total) * 100) + '%';
                         },
                         (error) => {
                             // Hata durumu
@@ -120,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         (xhr) => {
                             // Yükleme ilerlemesi
                             console.log((xhr.loaded / xhr.total * 100) + '% yüklendi');
+                            document.getElementById('progress2').innerText = Math.round((xhr.loaded / xhr.total) * 100) + '%';
                         },
                         (error) => {
                             // Hata durumu
@@ -161,7 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         (xhr) => {
                             // Yükleme ilerlemesi
-                            console.log((xhr.loaded / xhr.total * 100) + '% yüklendi');
+                            console.log(Math.round((xhr.loaded / xhr.total) * 100) + '% yüklendi');
+                            document.getElementById('progress3').innerText = Math.round((xhr.loaded / xhr.total) * 100) + '%';
+                            setTimeout(() => {
+                                document.getElementById('loadingText').style.display = 'none';
+                                document.getElementById('startButton').style.display = 'block';
+                            }, 5000);
                         },
                         (error) => {
                             // Hata durumu
